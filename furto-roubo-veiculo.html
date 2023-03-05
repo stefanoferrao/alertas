@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ALERTAS PARA WHATSAPP</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f5f5f5;
+	}
+	
+	h1 {
+		font-size: 32px;
+		text-align: center;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		color: #4CAF50;
+		text-transform: uppercase;
+	}
+	
+	form {
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 20px;
+		background-color: #fff;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	label {
+		display: block;
+		font-size: 18px;
+		font-weight: bold;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		color: #333;
+		text-transform: uppercase;
+	}
+	
+	input[type="date"],
+	input[type="time"],
+	textarea {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		border: 2px solid #ccc;
+		border-radius: 5px;
+		font-size: 16px;
+		margin-top: 5px;
+		resize: vertical;
+		background-color: #fff;
+		color: #333;
+	}
+	
+	select {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		border: 2px solid #ccc;
+		border-radius: 5px;
+		font-size: 16px;
+		margin-top: 5px;
+		background-color: #fff;
+		color: #333;
+	}
+	
+	button {
+		background-color: #808080;
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		font-size: 20px;
+		cursor: pointer;
+		margin-top: 30px;
+		float: right;
+		transition: background-color 0.2s ease-in-out;
+	}
+	
+	button:hover {
+		background-color: #4caf50;
+	}
+
+	@media screen and (max-width: 600px) {
+		form {
+			padding: 10px;
+		}
+		
+		button {
+			float: none;
+		}
+		
+		h1 {
+			font-size: 28px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		
+		label {
+			font-size: 16px;
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+		
+		input[type="date"],
+		input[type="time"],
+		textarea,
+		select {
+			font-size: 14px;
+		}
+		
+		button {
+			margin-top: 20px;
+		}
+	}
+		/* Darkmode CSS */
+		body.darkmode {
+			background-color: #222;
+			color: #eee;
+		}
+
+		body.darkmode h1 {
+			color: #eee;
+		}
+
+		form.darkmode {
+			background-color: #333;
+			color: #eee;
+			box-shadow: none;
+		}
+
+		form.darkmode label {
+			color: #eee;
+		}
+
+		input[type="date"].darkmode,
+		input[type="time"].darkmode,
+		textarea.darkmode {
+			background-color: #333;
+			color: #eee;
+			border-color: #eee;
+		}
+
+		button.darkmode {
+			background-color: #222;
+			color: #eee;
+		}
+  
+
+	#themeToggle {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	width: 20px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #808080;
+	box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
+	z-index: 999;
+  }
+  
+  	#themeToggle .theme-icon {
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+  }
+  
+	#themeToggle .light-icon {
+	color: #000000;
+  }
+  
+  /* Adicione um estilo hover para o botão */
+	#themeToggle:hover {
+	cursor: pointer;
+	background-color: #4caf50;
+  }
+
+</style>
+</head>
+<body>
+	<h1>ALERTAS PARA WHATSAPP</h1>
+<button id="themeToggle">
+  <span class="theme-icon light-icon">💡</span>
+
+</button>
+
+	<form>
+		<label for="fato">FATO:</label>
+<select id="fato" name="fato">
+  <option value="">- - - -</option>
+  <option value="*FURTO DE VEÍCULO EM* ">FURTO </option>
+  <option value="*ROUBO DE VEÍCULO EM* ">ROUBO</option>
+  <option value="*ROUBO DE VEÍCULO COM SEQUESTRO EM* ">ROUBO DE VEICULO COM SEQUESTRO</option>
+  
+  
+</select>
+<label for="cidade">CIDADE DO FATO:</label>
+		<textarea id="cidade" name="cidade" rows="1" cols="1"></textarea>
+<form>
+		<label for="cor">COR:</label>
+<select id="cor" name="cor">
+  <option value="">- - - -</option>
+  <option value="AMARELA">AMARELA</option>
+  <option value="AZUL">AZUL</option>
+  <option value="BEGE">BEGE</option>
+  <option value="BRANCA">BRANCA</option>
+  <option value="CINZA">CINZA</option>
+  <option value="DOURADA">DOURADA</option>
+  <option value="GRENÁ">GRENÁ</option>
+  <option value="LARANJA">LARANJA</option>
+  <option value="MARROM">MARROM</option>
+  <option value="PRATA">PRATA</option>
+  <option value="PRETA">PRETA</option>
+  <option value="ROSA">ROSA</option>
+  <option value="ROXA">ROXA</option>
+  <option value="VERDE">VERDE</option>
+  <option value="VERMELHA">VERMELHA</option>
+  <option value="FANTASIA">FANTASIA</option>
+  
+</select>
+		<label for="modelo">MARCA/MODELO:</label>
+		<textarea id="modelo" name="modelo" rows="1" cols="1"></textarea>
+		<label for="placa">PLACA:</label>
+		<textarea id="placa" name="placa" rows="1" cols="1"></textarea>
+
+		
+		
+		<label for="data">DATA:</label>
+		<input type="date" id="data" name="data" required>
+		
+		<label for="hora">HORA:</label>
+		<input type="time" id="hora" name="hora" required>
+		
+		<label for="endereco">ENDEREÇO:</label>
+		<input type="text" style="width: 100%;" id="endereco" name="endereco" placeholder="RUA, NÚMERO E BAIRRO" required>
+
+		<label for="historico">HISTÓRICO:</label>
+		<textarea id="historico" name="historico" rows="2" cols="15"></textarea>
+		
+		
+		
+		
+		
+		<button type="button" onclick="copyToClipboard()">Copiar</button>
+		
+		<script>
+
+  function copyToClipboard() {
+    var copyText = document.createElement("textarea");
+    copyText.style.position = "absolute";
+    copyText.style.left = "-99999px";
+    copyText.style.top = "0";
+    copyText.setAttribute("readonly", "");
+    copyText.value = formatMessage();
+    document.body.appendChild(copyText);
+    copyText.select();
+    document.execCommand("copy");
+    document.body.removeChild(copyText);
+    alert("DADOS COPIADOS");
+  }
+
+  function formatMessage() {
+  var fato = "🚨 *ALERTA DE* " + document.getElementById("fato").value + "*" + document.getElementById("cidade").value.toUpperCase() + "*🚨" + "\n\n";
+
+  const dataInput = document.getElementById("data");
+  const rawDate = dataInput.value;
+  const date = new Date(rawDate);
+  const timezoneOffset = date.getTimezoneOffset() / 60; // Obter o deslocamento em horas
+  date.setUTCHours(date.getUTCHours() + timezoneOffset); // Ajustar a hora em relação ao UTC
+  const formattedDate = ("0" + date.getDate()).slice(-2) + "/" + ("0" + (date.getMonth() + 1)).slice(-2) + "/" + date.getFullYear();
+  const data = "DATA:* " + formattedDate + "\n";
+
+  // use a variável "data" formatada como desejar
+
+  var hora = "HORA:* " + document.getElementById("hora").value + "\n";
+  var endereco = "ENDEREÇO:* " + document.getElementById("endereco").value + "\n\n";
+  var historico = "HISTÓRICO:* " + document.getElementById("historico").value + "\n" + ("");
+  const placaInput = document.getElementById("placa");
+  const placa = "PLACA:* " + placaInput.value.toUpperCase() + "\n";
+  const modeloInput = document.getElementById("modelo");
+  const modelo = "MODELO:* " + modeloInput.value.toUpperCase() + "\n";
+  var cor = "COR:* " + document.getElementById("cor").value + "\n";
+  return "" + fato + "*" + modelo + "*" + placa + "*" + cor + "*" + data + "*" + hora + "*" + endereco + "*" + historico;
+}
+
+  const themeToggle = document.getElementById("themeToggle");
+  const body = document.body;
+  const form = document.querySelector("form");
+
+  themeToggle.addEventListener("click", function() {
+  body.classList.toggle("darkmode");
+  form.classList.toggle("darkmode");
+  });
+
+</script>
+
+</body>
+
+<!-- Adicionando o crédito na página -->
+<footer>
+  <font size="1">  </font> <br />
+</footer>
+</html>
