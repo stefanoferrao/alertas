@@ -1,271 +1,287 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>FORMATAR RELEASE</title>
-	<style>
-		* {
-			box-sizing: border-box;
-		}
-	body {
-		font-family: Arial, sans-serif;
-		margin: 0;
-		padding: 0;
-		background-color: #f5f5f5;
-	}
-	
-	h1 {
-		font-size: 32px;
-		text-align: center;
-		margin-top: 30px;
-		margin-bottom: 30px;
-		color: #4CAF50;
-		text-transform: uppercase;
-	}
-	
-	form {
-		max-width: 600px;
-		margin: 0 auto;
-		padding: 20px;
-		background-color: #fff;
-		border-radius: 5px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	}
-	
-	label {
-		display: block;
-		font-size: 18px;
-		font-weight: bold;
-		margin-top: 20px;
-		margin-bottom: 10px;
-		color: #333;
-		text-transform: uppercase;
-	}
-	
-	input[type="date"],
-	input[type="time"],
-	textarea {
-		display: block;
-		width: 100%;
-		padding: 10px;
-		border: 2px solid #ccc;
-		border-radius: 5px;
-		font-size: 16px;
-		margin-top: 5px;
-		resize: vertical;
-		background-color: #fff;
-		color: #333;
-	}
-	
-	select {
-		display: block;
-		width: 100%;
-		padding: 10px;
-		border: 2px solid #ccc;
-		border-radius: 5px;
-		font-size: 16px;
-		margin-top: 5px;
-		background-color: #fff;
-		color: #333;
-	}
-	
-	button {
-		background-color: #808080;
-		color: white;
-		padding: 10px 20px;
-		border: none;
-		border-radius: 5px;
-		font-size: 20px;
-		cursor: pointer;
-		margin-top: 30px;
-		float: right;
-		transition: background-color 0.2s ease-in-out;
-	}
-	
-	button:hover {
-		background-color: #4caf50;
-	}
-
-	@media screen and (max-width: 600px) {
-		form {
-			padding: 10px;
-		}
-		
-		button {
-			float: none;
-		}
-		
-		h1 {
-			font-size: 28px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-		
-		label {
-			font-size: 16px;
-			margin-top: 10px;
-			margin-bottom: 5px;
-		}
-		
-		input[type="date"],
-		input[type="time"],
-		textarea,
-		select {
-			font-size: 14px;
-		}
-		
-		button {
-			margin-top: 20px;
-		}
-	}
-		/* Darkmode CSS */
-		body.darkmode {
-			background-color: #222;
-			color: #eee;
-		}
-
-		body.darkmode h1 {
-			color: #eee;
-		}
-
-		form.darkmode {
-			background-color: #333;
-			color: #eee;
-			box-shadow: none;
-		}
-
-		form.darkmode label {
-			color: #eee;
-		}
-
-		input[type="date"].darkmode,
-		input[type="time"].darkmode,
-		textarea.darkmode {
-			background-color: #333;
-			color: #eee;
-			border-color: #eee;
-		}
-
-		button.darkmode {
-			background-color: #222;
-			color: #eee;
-		}
+  <head>
+    <meta charset="UTF-8">
+    <title>Copiar campos com Swal2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
+    <style>
+      * {
+          box-sizing: border-box;
+        }
+  body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f5f5f5;
+        }
   
-
-	#themeToggle {
-	position: fixed;
-	top: 20px;
-	left: 20px;
-	width: 20px;
-	height: 40px;
-	border-radius: 50%;
-	background-color: #808080;
-	box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
-	z-index: 999;
+  h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #4CAF50;
+    text-transform: uppercase;
   }
   
-  	#themeToggle .theme-icon {
-	font-size: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-	#themeToggle .light-icon {
-	color: #000000;
+  label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  input[type="date"],
+  input[type="time"],
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    resize: vertical;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  button {
+    background-color: #808080;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+    float: right;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #4caf50;
+  }
+
+  @media screen and (max-width: 600px) {
+    form {
+      padding: 10px;
+    }
+    
+    button {
+      float: none;
+    }
+    
+    h1 {
+      font-size: 28px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    label {
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    
+    input[type="date"],
+    input[type="time"],
+    textarea,
+    select {
+      font-size: 14px;
+    }
+    
+    button {
+      margin-top: 20px;
+    }
+  }
+    /* Darkmode CSS */
+    body.darkmode {
+      background-color: #222;
+      color: #eee;
+    }
+
+    body.darkmode h1 {
+      color: #eee;
+    }
+
+    form.darkmode {
+      background-color: #333;
+      color: #eee;
+      box-shadow: none;
+    }
+
+    form.darkmode label {
+      color: #eee;
+    }
+
+    input[type="date"].darkmode,
+    input[type="time"].darkmode,
+    textarea.darkmode {
+      background-color: #333;
+      color: #eee;
+      border-color: #eee;
+    }
+
+    button.darkmode {
+      background-color: #222;
+      color: #eee;
+    }
+  
+
+  #themeToggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 20px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #808080;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  }
+  
+    #themeToggle .theme-icon {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  }
+  
+  #themeToggle .light-icon {
+  color: #000000;
   }
   
   /* Adicione um estilo hover para o botão */
-	#themeToggle:hover {
-	cursor: pointer;
-	background-color: #4caf50;
+  #themeToggle:hover {
+  cursor: pointer;
+  background-color: #4caf50;
   }
 
 </style>
-</head>
-<body>
-	<h1>FORMATAR RELEASE (Histórico Preliminar)</h1>
+  </head>
+  <body>
+    <h1>FORMATAR RELEASE (Histórico Preliminar)</h1>
 <button id="themeToggle">
   <span class="theme-icon light-icon">💡</span>
 
 </button>
+    <form>
+      
+      <label for="fato">FATO:</label>
+        <select id="fato" name="fato">
+          <option value="">- - - -</option>
+          <option value="PRISÃO TRAFICO DE DROGAS">PRISÃO TRAFICO DE DROGAS</option>
+          <option value="PRISÃO PORTE ILEGAL DE ARMA DE FOGO">PRISÃO PORTE ILEGAL DE ARMA DE FOGO</option>
+          <option value="PRISÃO ROUBO A PEDESTRE">PRISÃO ROUBO A PEDESTRE</option>
+          <option value="PRISÃO ROUBO A ESTABELECIMENTO COMERCIAL">PRISÃO ROUBO A ESTABELECIMENTO COMERCIAL</option>
+          <option value="PRISÃO ROUBO DE VEÍCULO">PRISÃO ROUBO DE VEÍCULO</option>
+          <option value="PRISÃO SEQUESTRO">PRISÃO SEQUESTRO</option>
+          <option value="PRISÃO HOMICÍDIO">PRISÃO HOMICÍDIO</option>
+          <option value="PRISÃO FURTO DE VEÍCULO">PRISÃO FURTO DE VEÍCULO</option>
+        </select>
 
-	<form>
-		<label for="fato">FATO:</label>
-<select id="fato" name="fato">
-  <option value="">- - - -</option>
-  <option value="PRISÃO TRAFICO DE DROGAS">PRISÃO TRAFICO DE DROGAS</option>
-  <option value="PRISÃO PORTE ILEGAL DE ARMA DE FOGO">PRISÃO PORTE ILEGAL DE ARMA DE FOGO</option>
-  <option value="PRISÃO ROUBO A PEDESTRE">PRISÃO ROUBO A PEDESTRE</option>
-  <option value="PRISÃO ROUBO A ESTABELECIMENTO COMERCIAL">PRISÃO ROUBO A ESTABELECIMENTO COMERCIAL</option>
-  <option value="PRISÃO ROUBO DE VEÍCULO">PRISÃO ROUBO DE VEÍCULO</option>
-  <option value="PRISÃO SEQUESTRO">PRISÃO SEQUESTRO</option>
-  <option value="PRISÃO HOMICÍDIO">PRISÃO HOMICÍDIO</option>
-  <option value="PRISÃO FURTO DE VEÍCULO">PRISÃO FURTO DE VEÍCULO</option>
-</select>
+      <label for="data">DATA:</label>
+      <input type="date" id="data" name="data">
 
-		<label for="data">DATA:</label>
-		<input type="date" id="data" name="data" required>
-		
-		<label for="hora">HORA:</label>
-		<input type="time" id="hora" name="hora" required>
-		
-		<label for="endereco">ENDEREÇO:</label>
-		<input type="text" style="width: 100%;" id="endereco" name="endereco" placeholder="Cidade, Logradouro, Número" required>
+      <label for="hora">HORA:</label>
+      <input type="time" id="hora" name="hora">
+      
+      <label for="endereco">ENDEREÇO:</label>
+      <input type="text" style="width: 100%;" id="endereco" name="endereco" placeholder="Cidade, Logradouro, Número" required>
 
-		<label for="historico">HISTÓRICO PRELIMINAR:</label>
-		<textarea id="historico" name="historico" rows="5" cols="30"></textarea>
-		
-		<label for="materialidade">MATERIALIDADE APREENDIDA:</label>
-		<textarea id="materialidade" name="materialidade" rows="5" cols="30"></textarea>
-		
-		<label for="detidos">INDIVÍDUOS DETIDOS:</label>
-		<textarea id="detidos" name="detidos" rows="5" cols="30"></textarea>
-		
-		<button type="button" onclick="copyToClipboard()">Copiar</button>
-		
-		<script>
+      <label for="historico">HISTÓRICO PRELIMINAR:</label>
+      <textarea id="historico" name="historico" rows="5" cols="30"></textarea>
+    
+      <label for="materialidade">MATERIALIDADE APREENDIDA:</label>
+      <textarea id="materialidade" name="materialidade" rows="5" cols="30"></textarea>
+    
+      <label for="detidos">INDIVÍDUOS DETIDOS:</label>
+      <textarea id="detidos" name="detidos" rows="5" cols="30"></textarea>
 
-  function copyToClipboard() {
-    var copyText = document.createElement("textarea");
-    copyText.style.position = "absolute";
-    copyText.style.left = "-99999px";
-    copyText.style.top = "0";
-    copyText.setAttribute("readonly", "");
-    copyText.value = formatMessage();
-    document.body.appendChild(copyText);
-    copyText.select();
+  <button type="button" onclick="copiarCampos()">COPIAR</button>
+  <!-- Adicionando o crédito na página -->
+<footer>
+  <font size="1"> Criado por Sd Ferrão - 32BPM </font> <br />
+</footer>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.js"></script>
+<script>
+
+ function copiarCampos() {
+    var fato = document.getElementById("fato").value;
+    var dataInput = document.getElementById("data");
+    var hora = document.getElementById("hora").value;
+    var endereco = document.getElementById("endereco").value;
+    var historico = document.getElementById("historico").value;
+    var materialidade = document.getElementById("materialidade").value;
+    var detidos = document.getElementById("detidos").value;
+    var mensagem = formatMessage(fato, dataInput, hora, endereco, historico, materialidade, detidos);
+
+    // Criar um elemento temporário e definir seu valor como a mensagem
+    var temp = document.createElement("textarea");
+    temp.value = mensagem;
+
+    // Adicionar o elemento temporário à página
+    document.body.appendChild(temp);
+
+    // Selecionar o conteúdo do elemento temporário
+    temp.select();
+
+    // Copiar o conteúdo selecionado para a área de transferência
     document.execCommand("copy");
-    document.body.removeChild(copyText);
-    alert("DADOS COPIADOS EM FORMATO PARA WHATSAPP");
+
+    // Remover o elemento temporário da página
+    document.body.removeChild(temp);
+
+    // Exibir um alerta de sucesso
+    Swal.fire({
+      icon: 'success',
+      title: 'COPIADO!',
+      confirmButtonText: 'OK'
+    });
   }
 
-  function formatMessage() {
-  var fato = "*OCORRÊNCIA:* " + document.getElementById("fato").value + "\n\n";
-
-  const dataInput = document.getElementById("data");
+function formatMessage(fato, dataInput, hora, endereco, historico, materialidade, detidos) {
   const rawDate = dataInput.value;
   const date = new Date(rawDate);
-  const timezoneOffset = date.getTimezoneOffset() / 60; // Obter o deslocamento em horas
-  date.setUTCHours(date.getUTCHours() + timezoneOffset); // Ajustar a hora em relação ao UTC
+  const timezoneOffset = date.getTimezoneOffset() / 60;
+  date.setUTCHours(date.getUTCHours() + timezoneOffset);
   const formattedDate = ("0" + date.getDate()).slice(-2) + "/" + ("0" + (date.getMonth() + 1)).slice(-2) + "/" + date.getFullYear();
-  const data = "DATA:* " + formattedDate + "\n\n";
-
-  // use a variável "data" formatada como desejar
-
-  var hora = "HORA:* " + document.getElementById("hora").value + "\n\n";
-  var endereco = "ENDEREÇO:* " + document.getElementById("endereco").value + "\n\n";
-  var historico = "HISTÓRICO:* \n" + document.getElementById("historico").value + "\n\n";
-  var materialidade = "MATERIALIDADE APREENDIDA:* \n" + document.getElementById("materialidade").value + "\n\n";
-  var detidos = "INDIVÍDUOS DETIDOS:* \n" + document.getElementById("detidos").value + "\n";
-  return "" + fato + "*" + data + "*" + hora + "*" + endereco + "*" + historico + "*" + materialidade + "*" + detidos;
+  const dataText = "" + formattedDate;
+  return `*FATO:* ${fato}\n*DATA:* ${dataText}\n*HORA:* ${hora}\n*ENDEREÇO:* ${endereco}\n*HISTÓRICO:* \n${historico}\n\n*MATERIALIDADE APREENDIDA:* \n${materialidade}\n\n*INDIVÍDUOS DETIDOS:* \n${detidos}`;
 }
 
-  const themeToggle = document.getElementById("themeToggle");
-  const body = document.body;
-  const form = document.querySelector("form");
+const themeToggle = document.getElementById("themeToggle");
+const body = document.body;
+const form = document.querySelector("form");
+
 
   themeToggle.addEventListener("click", function() {
   body.classList.toggle("darkmode");
@@ -274,8 +290,4 @@
 
 </script>
 </body>
-
-<!-- Adicionando o crédito na página -->
-<footer>
-  <font size="1"> Criado por Sd Ferrão - 32BPM </font> <br />
-</footer>
+</html>
