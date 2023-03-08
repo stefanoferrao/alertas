@@ -15,6 +15,14 @@
     <title>Formulário de Contato</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+      form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
       body {
         margin: 0;
         padding: 0;
@@ -33,10 +41,112 @@
         margin: 0 auto;
         display: block;
       }
+
+          /* Darkmode CSS */
+    body.darkmode {
+      background-color: #222;
+      color: #eee;
+    }
+
+    body.darkmode h1 {
+      color: #eee;
+    }
+
+    form.darkmode {
+      background-color: #333;
+      color: #eee;
+      box-shadow: none;
+    }
+
+    form.darkmode label {
+      color: #eee;
+    }
+
+    input[type="date"].darkmode,
+    input[type="time"].darkmode,
+    textarea.darkmode {
+      background-color: #333;
+      color: #eee;
+      border-color: #eee;
+    }
+
+    button.darkmode {
+      outline: none !important;
+      border: none !important;
+      background-color: #808080;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 20px;
+      cursor: pointer;
+      margin-top: 30px;
+      float: right;
+      transition: background-color 0.2s ease-in-out;
+    }
+  
+button.darkmode:hover {
+  background-color: #236cb0;
+  border: none !important;
+}
+
+
+    @media screen and (max-width: 600px) {
+      button {
+      float: none;
+      margin-top: 20px;
+    }
+    }
+    
+  #themeToggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #808080;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  }
+  
+    #themeToggle .theme-icon {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  }
+  
+  #themeToggle .light-icon {
+  color: #000000;
+  }
+  
+  /* Adicione um estilo hover para o botão */
+  #themeToggle:hover {
+  cursor: pointer;
+  background-color: #236cb0;
+  }
+
     </style>
   </head>
   <body>
     <h1></h1>
+
+    <button id="themeToggle">
+  <span class="theme-icon light-icon">💡</span>
+</button>
+
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdlIIcfScBCkobJGqkdPvSsg6_gyetDMhVd4zHxZQJQGSgVg/viewform?embedded=true" width="650" height="530" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">Carregando…</iframe>
+
+<script>
+const themeToggle = document.getElementById("themeToggle");
+const body = document.body;
+const form = document.querySelector("form");
+
+  themeToggle.addEventListener("click", function() {
+  body.classList.toggle("darkmode");
+  form.classList.toggle("darkmode");
+  });
+</script>
   </body>
 </html>
