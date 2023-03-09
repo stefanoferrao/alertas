@@ -32,7 +32,9 @@
         display: block;
         width: 100%;
         border: none;
+        transition: filter 0.3s;
       }
+
       h1 {
         text-align: center;
         margin: 1em 0;
@@ -61,6 +63,8 @@
     form.darkmode label {
       color: #eee;
     }
+
+
 
     input[type="date"].darkmode,
     input[type="time"].darkmode,
@@ -129,6 +133,10 @@ button.darkmode:hover {
   background-color: #236cb0;
   }
 
+  .dark-mode {
+        filter: invert(100%) grayscale(1);
+      }
+
     </style>
   </head>
   <body>
@@ -144,10 +152,12 @@ button.darkmode:hover {
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 const form = document.querySelector("form");
+const iframe = document.querySelector('iframe');
 
   themeToggle.addEventListener("click", function() {
-  body.classList.toggle("darkmode");
-  form.classList.toggle("darkmode");
+    iframe.classList.toggle('dark-mode');
+    body.classList.toggle("darkmode");
+    form.classList.toggle("darkmode");
   });
 </script>
   </body>
